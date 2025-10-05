@@ -2,12 +2,12 @@
 -- PostgreSQL database dump
 --
 
-\restrict ctrrZEFMZ8ingcOmnuak6MrAHOos13mGti8CR7bpXIu6jPh8QgdkoRIeWsbvRTB
+\restrict uD0UL4PGIMW3ShsAErPfpA4w3YdUhBJQ6xuqcDhoyv80b9sWWq7OdEZ1f8Aabch
 
 -- Dumped from database version 18.0
 -- Dumped by pg_dump version 18.0
 
--- Started on 2025-10-05 07:42:48
+-- Started on 2025-10-05 08:20:56
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -132,7 +132,6 @@ COPY public.nilai (id, siswa_id, mata_pelajaran, nilai) FROM stdin;
 12	2	Bahasa Inggris	90
 13	3	Kimia	100
 14	4	Informatika	80
-15	5	Matematika	80
 \.
 
 
@@ -143,11 +142,11 @@ COPY public.nilai (id, siswa_id, mata_pelajaran, nilai) FROM stdin;
 --
 
 COPY public.siswa (id, nama, umur, jurusan) FROM stdin;
-1	Andi	16	IPA
 2	Budi	17	IPS
 3	Wahid	17	IPA
 4	Hikmal	15	IPA
 5	Brisam	16	IPS
+1	Andi	16	IPS
 \.
 
 
@@ -196,11 +195,11 @@ ALTER TABLE ONLY public.nilai
     ADD CONSTRAINT nilai_siswa_id_fkey FOREIGN KEY (siswa_id) REFERENCES public.siswa(id);
 
 
--- Completed on 2025-10-05 07:42:48
+-- Completed on 2025-10-05 08:20:56
 
 --
 -- PostgreSQL database dump complete
 --
 
-\unrestrict ctrrZEFMZ8ingcOmnuak6MrAHOos13mGti8CR7bpXIu6jPh8QgdkoRIeWsbvRTB
+\unrestrict uD0UL4PGIMW3ShsAErPfpA4w3YdUhBJQ6xuqcDhoyv80b9sWWq7OdEZ1f8Aabch
 
