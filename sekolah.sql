@@ -2,12 +2,12 @@
 -- PostgreSQL database dump
 --
 
-\restrict jpHJbjdVJ6KGab7VlKqomTsCEZW8Q68qT0zT2vsdZlAv9hkXXU3qo84gi4rIaFZ
+\restrict ctrrZEFMZ8ingcOmnuak6MrAHOos13mGti8CR7bpXIu6jPh8QgdkoRIeWsbvRTB
 
 -- Dumped from database version 18.0
 -- Dumped by pg_dump version 18.0
 
--- Started on 2025-10-05 07:26:07
+-- Started on 2025-10-05 07:42:48
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -73,7 +73,7 @@ ALTER SEQUENCE public.nilai_id_seq OWNED BY public.nilai.id;
 CREATE TABLE public.siswa (
     id integer NOT NULL,
     nama character varying NOT NULL,
-    umut integer,
+    umur integer,
     jurusan character varying
 );
 
@@ -128,6 +128,11 @@ ALTER TABLE ONLY public.siswa ALTER COLUMN id SET DEFAULT nextval('public.siswa_
 --
 
 COPY public.nilai (id, siswa_id, mata_pelajaran, nilai) FROM stdin;
+11	1	Matematika	85
+12	2	Bahasa Inggris	90
+13	3	Kimia	100
+14	4	Informatika	80
+15	5	Matematika	80
 \.
 
 
@@ -137,7 +142,12 @@ COPY public.nilai (id, siswa_id, mata_pelajaran, nilai) FROM stdin;
 -- Data for Name: siswa; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.siswa (id, nama, umut, jurusan) FROM stdin;
+COPY public.siswa (id, nama, umur, jurusan) FROM stdin;
+1	Andi	16	IPA
+2	Budi	17	IPS
+3	Wahid	17	IPA
+4	Hikmal	15	IPA
+5	Brisam	16	IPS
 \.
 
 
@@ -147,7 +157,7 @@ COPY public.siswa (id, nama, umut, jurusan) FROM stdin;
 -- Name: nilai_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.nilai_id_seq', 1, false);
+SELECT pg_catalog.setval('public.nilai_id_seq', 15, true);
 
 
 --
@@ -156,7 +166,7 @@ SELECT pg_catalog.setval('public.nilai_id_seq', 1, false);
 -- Name: siswa_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.siswa_id_seq', 1, false);
+SELECT pg_catalog.setval('public.siswa_id_seq', 5, true);
 
 
 --
@@ -186,11 +196,11 @@ ALTER TABLE ONLY public.nilai
     ADD CONSTRAINT nilai_siswa_id_fkey FOREIGN KEY (siswa_id) REFERENCES public.siswa(id);
 
 
--- Completed on 2025-10-05 07:26:07
+-- Completed on 2025-10-05 07:42:48
 
 --
 -- PostgreSQL database dump complete
 --
 
-\unrestrict jpHJbjdVJ6KGab7VlKqomTsCEZW8Q68qT0zT2vsdZlAv9hkXXU3qo84gi4rIaFZ
+\unrestrict ctrrZEFMZ8ingcOmnuak6MrAHOos13mGti8CR7bpXIu6jPh8QgdkoRIeWsbvRTB
 
